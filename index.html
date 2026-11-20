@@ -17,7 +17,7 @@
     if (!rem) {
       clearInterval(e);
       o.classList.add("fim");
-      o.querySelector(".cd-t").textContent = "A oferta da Black foi encerrada";
+      o.querySelector(".cd-t").textContent = "A oferta da Black Week foi encerrada";
     }
   }
 }(),
@@ -28,7 +28,7 @@ function(){
       "https://pay.hotmart.com/A108248921F?off=wzhibv8t",
       "https://pay.hotmart.com/X108249048I?off=jfr3l42i",
       "https://pay.hotmart.com/P108249218A?off=2s0v1861",
-      "https://pay.hotmart.com/L108251297O?off=j81uvsl1",
+      "https://pay.hotmart.com/V107510130L?off=7cencysp",
       "https://pay.hotmart.com/A108251404N?off=fjotozb1",
       "https://pay.hotmart.com/H108251606B?off=pa2w3916"
     ],
@@ -41,7 +41,20 @@ function(){
       "https://pay.hotmart.com/G106476713T?off=1wrhwrj2",  // 5: Cocriando a Prosperidade
       ""                                                  // 6: Signo individual (usa o.signos)
     ],
-    signos: ["https://pay.hotmart.com/D107468692G?off=kbqr9reh","https://pay.hotmart.com/F107468662I?off=b351ne9t","https://pay.hotmart.com/B107468647U?off=nszh8sqd","https://pay.hotmart.com/N107468623W?off=pp781dqo","https://pay.hotmart.com/K107468606J?off=sh4mgxp7","https://pay.hotmart.com/O107468585C?off=vnkgdeta","https://pay.hotmart.com/P107468571F?off=kuktxg8m","https://pay.hotmart.com/P107468552G?off=uc6vjv7u","https://pay.hotmart.com/D107468494H?off=kaah1ojn","https://pay.hotmart.com/A107468476C?off=wt7fc378","https://pay.hotmart.com/B107457641F?off=cv35icy2","https://pay.hotmart.com/P106854830Q?off=b8je5gfn"]
+    signos: [
+      "https://pay.hotmart.com/D107468692G?off=kbqr9reh", // 0: Áries
+      "https://pay.hotmart.com/F107468662I?off=b351ne9t", // 1: Touro
+      "https://pay.hotmart.com/B107468647U?off=nszh8sqd", // 2: Gêmeos
+      "https://pay.hotmart.com/N107468623W?off=pp781dqo", // 3: Câncer
+      "https://pay.hotmart.com/K107468606J?off=sh4mgxp7", // 4: Leão
+      "https://pay.hotmart.com/O107468585C?off=vnkgdeta", // 5: Virgem
+      "https://pay.hotmart.com/P107468571F?off=kuktxg8m", // 6: Libra
+      "https://pay.hotmart.com/P107468552G?off=uc6vjv7u", // 7: Escorpião
+      "https://pay.hotmart.com/D107468494H?off=kaah1ojn", // 8: Sagitário
+      "https://pay.hotmart.com/A107468476C?off=wt7fc378", // 9: Capricórnio
+      "https://pay.hotmart.com/B107457641F?off=cv35icy2", // 10: Aquário
+      "https://pay.hotmart.com/P106854830Q?off=b8je5gfn"  // 11: Peixes
+    ]
   };
 
   var root = document.getElementById("bdc");
@@ -52,20 +65,20 @@ function(){
     if (localImages.indexOf(slug) !== -1 || (slug && slug.indexOf("signo-") === 0)) {
       return "img/" + slug + ".webp";
     }
-    return "https://universidadecristinacairo.com.br/wp-content/uploads/2026/10/black-" + slug + ".webp";
+    return "img/" + slug + ".webp";
   };
 
   var fmtCurr = function(val){ return val.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }); };
   var fmtNum = function(val){ return val.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
 
-  // Combos definition (keeping exact visual structure)
+  // Combos definition - strictly with approved Black Week products
   var combosData = [
-    { name: "Primeiros Passos no Conhecimento", price: 297, inst: 29.54, base: 444, items: ["Introdução à Linguagem do Corpo", "Cocriando a Prosperidade"], bonus: "Roteiro de estudo sugerido", short: "Primeiros passos" },
-    { name: "Corpo e Equilíbrio", price: 397, inst: 39.42, base: 791, items: ["Acabe com a Obesidade", "Meditação"], bonus: "O Poder dos Gatos", short: "Corpo e equilíbrio" },
-    { name: "Consciência e Espiritualidade", price: 497, inst: 49.60, base: 1088, items: ["Transição Planetária", "Extraterrestres", "A Arte do Benzimento"], bonus: "Meditação", short: "Espiritualidade" },
-    { name: "Universo do Autoconhecimento", price: 796, inst: 79.44, base: 2808, items: ["Os 12 signos pela Linguagem do Corpo", "Introdução à Linguagem do Corpo"], bonus: "Cocriando a Prosperidade", short: "Universo dos signos" },
-    { name: "Jornada Método C.A.I.R.O. e Signos", price: 2697, inst: 269.17, base: 7855, items: ["Método C.A.I.R.O.", "Os 12 signos pela Linguagem do Corpo"], bonus: "Meditação + Cocriando a Prosperidade", short: "Método + Signos" },
-    { name: "Coleção Black do Conhecimento", price: 3995, inst: 398.72, base: 9387, items: ["Método C.A.I.R.O. + os 12 signos", "Introdução à Linguagem do Corpo", "Acabe com a Obesidade + Meditação", "Prosperidade + A Arte do Benzimento", "Transição Planetária + Extraterrestres", "O Poder dos Gatos"], bonus: "Roteiro de estudo por etapas", short: "Coleção completa" }
+    { name: "Conhecimento e Prosperidade", price: 297, inst: 29.54, base: 494, items: ["Cocriando a Prosperidade", "Meditação"], bonus: "Roteiro de estudo sugerido", short: "Primeiros passos" },
+    { name: "Corpo e Equilíbrio", price: 397, inst: 39.42, base: 791, items: ["Acabe com a Obesidade", "Meditação"], bonus: "Cocriando a Prosperidade", short: "Corpo e equilíbrio" },
+    { name: "Consciência e Espiritualidade", price: 497, inst: 49.60, base: 791, items: ["A Arte do Benzimento", "Cocriando a Prosperidade"], bonus: "Meditação", short: "Espiritualidade" },
+    { name: "Universo dos Signos", price: 746, inst: 74.45, base: 2561, items: ["Os 12 signos pela Linguagem do Corpo"], bonus: "Cocriando a Prosperidade", short: "Universo dos signos" },
+    { name: "Jornada Método C.A.I.R.O. e Signos", price: 2697, inst: 269.17, base: 7361, items: ["Método C.A.I.R.O.", "Os 12 signos pela Linguagem do Corpo"], bonus: "Meditação + Cocriando a Prosperidade", short: "Método + Signos" },
+    { name: "Coleção Black Week do Conhecimento", price: 3490, inst: 348.30, base: 8449, items: ["Método C.A.I.R.O. + os 12 signos", "Acabe com a Obesidade + Meditação", "Cocriando a Prosperidade + A Arte do Benzimento"], bonus: "Roteiro de estudo por etapas", short: "Coleção completa" }
   ];
 
   var comboLabels = ["Para começar", "Para ampliar", "Para aprofundar"];
@@ -77,17 +90,17 @@ function(){
   var comboTiers = ["Essencial", "Expansão", "Jornada completa"];
 
   var comboItemsSlugs = [
-    ["introducao", "prosperidade"],
+    ["prosperidade", "meditacao"],
     ["obesidade", "meditacao"],
-    ["transicao", "extraterrestres", "benzimento"],
-    ["signos", "introducao"],
+    ["benzimento", "prosperidade"],
+    ["signos"],
     ["metodo", "signos"],
-    ["metodo", "signos", "introducao", "obesidade", "meditacao", "prosperidade", "benzimento", "transicao", "extraterrestres", "gatos"]
+    ["metodo", "signos", "obesidade", "meditacao", "prosperidade", "benzimento"]
   ];
 
   var comboBonusSlugs = [
     [],
-    ["gatos"],
+    ["prosperidade"],
     ["meditacao"],
     ["prosperidade"],
     ["meditacao", "prosperidade"],
@@ -95,19 +108,15 @@ function(){
   ];
 
   var itemTitles = {
-    introducao: "Introdução à Linguagem do Corpo",
     prosperidade: "Cocriando a Prosperidade",
     obesidade: "Acabe com a Obesidade",
     meditacao: "Meditação",
-    transicao: "Transição Planetária",
-    extraterrestres: "Extraterrestres",
     benzimento: "A Arte do Benzimento",
-    signos: "Os signos pela Linguagem do Corpo",
-    metodo: "Linguagem do Corpo — Método C.A.I.R.O.",
-    gatos: "O Poder dos Gatos"
+    signos: "Os 12 signos pela Linguagem do Corpo",
+    metodo: "Linguagem do Corpo — Método C.A.I.R.O."
   };
 
-  // Products from Black Week (with exact values and links)
+  // Products from Black Week
   var productsList = [
     { name: "Linguagem do Corpo — Método C.A.I.R.O.", base: 4997, price: 1997, category: "Cursos", inst: 199.31, slug: "metodo", index: 0, offTag: "60% OFF", featured: true },
     { name: "Os 12 Signos Pela Linguagem do Corpo", base: 2364, price: 746, category: "Signos", inst: 74.45, slug: "signos", index: 1, offTag: "68% OFF", featured: true },
@@ -122,8 +131,8 @@ function(){
 
   var faqList = [
     ["Qual a diferença entre combo e produto individual?", "O combo reúne conteúdos complementares com uma condição especial. Na oferta individual, você escolhe somente o curso, workshop ou palestra que deseja estudar."],
-    ["Já tenho um dos conteúdos. Qual oferta devo escolher?", "Confira a composição antes de escolher. As regras de complemento de coleção e upgrade para alunos serão definidas para a campanha, evitando compras de conteúdos repetidos."],
-    ["O que está incluído na Coleção Black do Conhecimento?", "Método C.A.I.R.O., os 12 signos, Introdução à Linguagem do Corpo, Acabe com a Obesidade, Meditação, Cocriando a Prosperidade, A Arte do Benzimento, Transição Planetária, Extraterrestres e O Poder dos Gatos. Não inclui lançamentos futuros, Avançado ou Mentoria."],
+    ["Já tenho um dos conteúdos. Qual oferta devo escolher?", "Confira a composição antes de escolher. As opções de coleção e upgrade permitem complementar seus estudos sem adquirir conteúdos repetidos."],
+    ["O que está incluído na Coleção Black Week?", "Método C.A.I.R.O., os 12 signos pela Linguagem do Corpo, Acabe com a Obesidade, Meditação, Cocriando a Prosperidade e A Arte do Benzimento. Não inclui lançamentos futuros, Avançado ou Mentoria."],
     ["Como funciona o acesso aos cursos e palestras?", "Assim que o pagamento for aprovado pela plataforma Hotmart, você receberá seus dados de acesso imediatamente no seu e-mail cadastrado, podendo iniciar seus estudos no mesmo instante."]
   ];
 
@@ -227,7 +236,7 @@ function(){
     return '<div class="old">De <s>' + fmtCurr(item.base) + '</s> por</div>' +
       (item.inst ? '<div class="price"><span class="px">12x de</span><small>R$</small><b>' + fmtNum(item.inst) + '</b></div><div class="avista">ou <b>' + fmtCurr(item.price) + '</b> à vista</div>' :
                    '<div class="price"><small>R$</small><b>' + fmtNum(item.price) + '</b></div><div class="tiny">à vista</div>') +
-      (item.index === 0 ? '<div class="tiny">Condição Black · 60% de desconto</div>' : '') +
+      (item.index === 0 ? '<div class="tiny">Condição Black Week · 60% de desconto</div>' : '') +
       '<div class="save"><span>Economize ' + fmtCurr(item.base - item.price) + '</span><span class="off">' + discountPct + '% OFF</span></div>';
   }
 
